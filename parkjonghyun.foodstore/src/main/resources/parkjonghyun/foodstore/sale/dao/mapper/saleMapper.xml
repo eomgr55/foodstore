@@ -1,0 +1,20 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN"
+	"http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+<mapper namespace="parkjonghyun.foodstore.sale.dao.mapper.SaleMapper">
+	<insert id="addSale" parameterType="string">
+		insert into SALES values(SALE_SEQ.NEXTVAL, #{userId}, #{prodNo}, #{guestNo}, #{prodCnt}, SYSDATE, 0)
+	</insert>
+	<select id="selectSale" parameterType="string" resultType="sale">
+		select sale_no saleNo, user_id userId, product_no prodNo, guest_no guestNo, sale_cnt saleCnt, sale_date saleDate, sale_state saleState
+		from sales
+		where user_id = #{userId}
+		AND sale_state != 3
+		order by sale_no
+	</select>
+	<update id="updateState" parameterType="String">
+		update sales 
+		set sale_state = #{saleState}
+		where sale_no = #{saleNo}
+	</update>
+</mapper>
