@@ -47,8 +47,13 @@ function button(){
 </script>
 <meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
 <style type="text/css">
+@font-face{
+	font-family: 'Binggrae';
+	src:url("../../resources/css/Binggrae-Bold.ttf") format('truetype');
+}
 body {
 	font-size: 1.2em;
+	font-family: Binggrae;
 }
 
 #main {
@@ -94,8 +99,7 @@ body {
 }
 
 .childli {
-	margin-left: -3px;
-	padding-top: 20px;
+	margin-left: 1em;
 }
 
 .nav-link2 {
@@ -192,7 +196,7 @@ body {
                            <strong>LOGO</strong>
                         </h2><hr> <span class="sr-only"></span>
                   </a></li>
-                  <li class="nav-item"><a class="nav-link" href="../sale/01.html"> <span
+                  <li class="nav-item"><a class="nav-link" href="../sale/saleList"> <span
                         data-feather="file"></span>
                      <p class="childli">매출 조회</p>
                   </a>

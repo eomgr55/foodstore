@@ -21,11 +21,20 @@
 
 	<context:component-scan base-package="parkjonghyun.foodstore" />
 	<mvc:annotation-driven />
+	
+	<bean id="beanNameViewResolver" class="org.springframework.web.servlet.view.BeanNameViewResolver">
+		<property name="order" value="0"/>
+    </bean>
+	
 	<bean
 		class="org.springframework.web.servlet.view.InternalResourceViewResolver">
 		<property name="prefix" value="/WEB-INF/views/" />
 		<property name="suffix" value=".jsp" />
 	</bean>
+
+	<bean id="excelDownloadView" class="parkjonghyun.foodstore.sale.excel.util.ExcelDownloadView"/>
+	<bean id="jsonView" class="org.springframework.web.servlet.view.json.MappingJackson2JsonView"/>
+	
 
 	<bean id="dataSource" class="org.springframework.jndi.JndiObjectFactoryBean">
 		<property name="jndiName" value="java:comp/env/jdbc/foodstore" />

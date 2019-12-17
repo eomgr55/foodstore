@@ -23,8 +23,13 @@
 <script src="https://cdn.jsdelivr.net/npm/promise-polyfill"></script>
 
 <style type="text/css">
+@font-face{
+	font-family: 'Binggrae';
+	src:url("../../resources/css/Binggrae-Bold.ttf") format('truetype');
+}
 body {
-   font-size: 1.2em;
+	font-size: 1.2em;
+	font-family: Binggrae;
 }
 .divshadow{
     box-shadow: 2.5px 2.5px 2.5px 2.5px slategrey;
@@ -33,10 +38,10 @@ body {
    background: #ECC45D;
    color: black;
    border: 2px solid;
-   width: 7em;
-   height: 2.5em;
-   font-size: 1.1em;
-   margin-right: 1em;
+   width: 7.5em;
+   height: 2.8em;
+   font-size: 1em;
+   margin-right: 1.54em;
 }
 #context {
 	margin-top: 5%;
@@ -57,7 +62,11 @@ body {
 .nav-link {
 	color: black;
 }
-
+.logo {
+   margin-left: -5px;
+   margin-top: 10px;
+   padding-bottom: 7px;
+}
 .childli {
 	margin-left: 1em;
 }

@@ -13,4 +13,6 @@ public interface UserDao {
     int updateUser(User user);  //회원수정
     int deleteUser(String userId); //화원삭제
 	List<User> getUserSearch(String searchVal, String searchCnt);
+	
+	
 }

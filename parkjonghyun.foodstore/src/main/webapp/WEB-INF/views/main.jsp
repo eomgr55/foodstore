@@ -9,22 +9,23 @@
 	content="width=device-width, initial-scale=1, shrink-to-fit=no">
 <link rel="stylesheet"
 	href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css"
-	integrity="sha384-ggOyR0iXCbMQv3Xipma34MD+dH/1fQ784/j6cY/iJTQUOhcWr7x9JvoRxT2MZw1T"
-	crossorigin="anonymous">
+>
 <script src="https://code.jquery.com/jquery-3.3.1.slim.min.js"
-	integrity="sha384-q8i/X+965DzO0rT7abK41JStQIAqVgRVzpbzo5smXKp4YfRvH+8abtTE1Pi6jizo"
-	crossorigin="anonymous"></script>
+></script>
 <script
 	src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.7/umd/popper.min.js"
-	integrity="sha384-UO2eT0CpHqdSJQ6hJty5KVphtPhzWj9WO1clHTMGa3JDZwrnQq4sF86dIHNDz0W1"
-	crossorigin="anonymous"></script>
+></script>
 <script
 	src="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/js/bootstrap.min.js"
-	integrity="sha384-JjSmVgyd0p3pXB1rRibZUAYoIIy6OrQ6VrjIEaFf/nJGzIxFDsf4x0xIM+B07jRM"
-	crossorigin="anonymous"></script>
+></script>
 <style type="text/css">
+@font-face{
+	font-family: 'Binggrae';
+	src:url("../resources/css/Binggrae-Bold.ttf") format('truetype');
+}
 body {
 	font-size: 1.2em;
+	font-family: Binggrae;
 }
 
 footer {
@@ -34,17 +35,26 @@ footer {
 	color: white;
 	text-align: center;
 }
-
-.dropdown-toggle {
-	background: #ECC45D;
-	color: black;
-	border: 2px solid;
-	width: 7em;
-	height: 2.5em;
-	font-size: 1.1em;
-	margin-right: 1em;
+.btn1{
+   margin-right: 1em !important;
 }
-
+.dropdown-toggle {
+   background: #ECC45D;
+   color: black;
+   border: 2px solid;
+   width: 7.5em;
+   height: 2.8em;
+   font-size: 1em;
+   margin-right: 1.54em;
+}
+.logo {
+   margin-left: -5px;
+   margin-top: 10px;
+   padding-bottom: 7px;
+}
+.childli {
+	margin-left: 1em;
+}
 .imgdiv {
 	overflow: auto;
 }
@@ -93,9 +103,10 @@ footer {
 }
 
 #context {
-	margin-top: 5%;
-	margin-left: 10%;
-	margin-right: 10%;
+   margin-top: 3%;
+   margin-left: 5%;
+   margin-right: 0%;
+   margin-bottom: 17%;
 }
 
 #carousel-set {
@@ -112,9 +123,7 @@ footer {
 	color: black;
 }
 
-.childli {
-	margin-left: 1em;
-}
+
 </style>
 
 <link rel='stylesheet'
@@ -185,10 +194,10 @@ footer {
 				<div class="sidebar-sticky">
 					<ul class="nav flex-column">
 						<li class="nav-item"><a class="nav-link active" href="main">
-								<h2>
+								<h2 class="logo">
 									<strong>LOGO</strong>
-								</h2>
-								<hr> <span class="sr-only"></span>
+									
+								</h2> <hr><span class="sr-only"></span>
 						</a></li>
 						<%
 							User user = (User) session.getAttribute("user");
@@ -199,7 +208,7 @@ footer {
 							}else{
 								if (user.getUserId().contains("admin")) {
 						%>
-						<li class="nav-item"><a class="nav-link" href="#"> <span
+						<li class="nav-item"><a class="nav-link" href="sale/saleList"> <span
 								data-feather="file"></span>
 								<p class="childli">매출 조회</p>
 						</a></li>
@@ -222,7 +231,7 @@ footer {
 								data-feather="file"></span>
 								<p class="childli">주문 확인</p>
 						</a></li>
-						<li class="nav-item"><a class="nav-link" href="#"> <span
+						<li class="nav-item"><a class="nav-link" href="sale/saleList"> <span
 								data-feather="file"></span>
 								<p class="childli">매출 조회</p>
 						</a></li>
@@ -249,7 +258,9 @@ footer {
 								
 								if (user == null) {
 							%>
-							<a class="btn btn-warning dropdown-toggle" href="user/login">Login</a>&nbsp;&nbsp;
+							<div class="dropdown">
+								<a class="btn btn-warning dropdown-toggle btn1" href="user/login"><strong>Login</strong></a>&nbsp;&nbsp;
+							</div>
 							<%
 								} else {
 									if (user.getUserId().contains("admin")) {
@@ -258,7 +269,7 @@ footer {
 						<div class="dropdown">
 							<button class="btn btn-warning dropdown-toggle" type="button"
 								id="dropdownMenu2" data-toggle="dropdown" aria-haspopup="true"
-								aria-expanded="false"><%=user.getUserName() %></button>
+								aria-expanded="false"><strong><%=user.getUserName() %></strong></button>
 							<div class="dropdown-menu" aria-labelledby="dropdownMenu2">
 								<button class="dropdown-item" type="button">
 									<a href="user/join">가맹점 등록</a>
@@ -274,7 +285,7 @@ footer {
 						<div class="dropdown">
 							<button class="btn btn-warning dropdown-toggle" type="button"
 								id="dropdownMenu2" data-toggle="dropdown" aria-haspopup="true"
-								aria-expanded="false"><%=user.getUserName() %></button>
+								aria-expanded="false"><strong><%=user.getUserName() %></strong></button>
 							<div class="dropdown-menu" aria-labelledby="dropdownMenu2">
 								<button class="dropdown-item" type="button">
 									<a href="user/check">정보 확인</a>

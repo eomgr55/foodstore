@@ -19,24 +19,28 @@
 <script src="sweetalert2.all.min.js"></script>
 <!-- Optional: include a polyfill for ES6 Promises for IE11 -->
 <script src="https://cdn.jsdelivr.net/npm/promise-polyfill"></script><style type="text/css">
+@font-face{
+	font-family: 'Binggrae';
+	src:url("../../resources/css/Binggrae-Bold.ttf") format('truetype');
+}
 body {
-   font-size: 1.2em;
+	font-size: 1.2em;
+	font-family: Binggrae;
 }
 .dropdown-toggle {
    background: #ECC45D;
    color: black;
    border: 2px solid;
-   width: 5.8em;
+   width: 7.5em;
    height: 2.8em;
    font-size: 1em;
-   margin-right: 1em;
+   margin-right: 1.54em;
 }
 #context {
-   margin-top: 5%;
-   margin-left: 10%;
-   margin-right: 10%;
-   margin-bottom: 10%;
-   position: relative
+   margin-top: 3%;
+   margin-left: 5%;
+   margin-right: 0%;
+   margin-bottom: 17%;
 }
 
 #carousel-set {
@@ -60,8 +64,7 @@ body {
    padding-bottom:7px;
 }
 .childli {
-   margin-left: -3px;
-   padding-top: 20px;
+ 	margin-left: 1em;
 }
 
 .formlabel {
@@ -125,7 +128,7 @@ document.addEventListener('keydown', function(event) {
                            <strong>LOGO</strong>
                         </h2><hr> <span class="sr-only"></span>
                   </a></li>
-                  <li class="nav-item"><a class="nav-link" href="../sale/01"> <span
+                  <li class="nav-item"><a class="nav-link" href="../sale/saleList"> <span
                         data-feather="file"></span>
                      <p class="childli">매출 조회</p>
                   </a>

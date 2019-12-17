@@ -1,6 +1,7 @@
 package parkjonghyun.foodstore.product.service;
 
 import java.util.List;
+import java.util.Map;
 
 import javax.servlet.http.HttpServletRequest;
 
@@ -18,4 +19,6 @@ public interface ProdService {
 	boolean addProd(HttpServletRequest request, String prodNo, String prodName, String prodCase, String prodCost, String prodPrice, MultipartFile prodImgPath);
 	int prodNoCnt();
 	boolean deleteProd(String prodNo);
+	
+	Map<String, List<Product>> getProdName();
 }

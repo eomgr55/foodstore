@@ -17,8 +17,16 @@
 <script src="sweetalert2.all.min.js"></script>
 <!-- Optional: include a polyfill for ES6 Promises for IE11 -->
 <script src="https://cdn.jsdelivr.net/npm/promise-polyfill"></script><style type="text/css">
+@font-face{
+	font-family: 'Binggrae';
+	src:url("../../resources/css/Binggrae-Bold.ttf") format('truetype');
+}
 body {
-   font-size: 1.2em;
+	font-size: 1.2em;
+	font-family: Binggrae;
+}
+input[type=password]{
+	font-family: serif;
 }
 .dropdown-toggle {
    background: #ECC45D;
@@ -58,8 +66,7 @@ body {
    padding-bottom:7px;
 }
 .childli {
-   margin-left: -3px;
-   padding-top: 20px;
+	margin-left: 1em;
 }
 
 .formlabel {

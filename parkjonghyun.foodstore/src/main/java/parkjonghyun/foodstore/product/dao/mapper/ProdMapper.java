@@ -16,4 +16,9 @@ public interface ProdMapper {
 	int addProd(Product product);		// 제품 추가
 	int prodNoCnt();					// 전체 제품 개수 , 제품 추가를 위해 있음 위에
 	int deleteProd(String prodNo);		// 제품 삭제
+	
+	
+	List<Product> getProdNameSushi();
+	List<Product> getProdNameSide();
+	List<Product> getProdNameDrink();
 }

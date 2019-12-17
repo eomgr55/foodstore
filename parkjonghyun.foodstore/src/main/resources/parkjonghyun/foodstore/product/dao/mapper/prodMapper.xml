@@ -57,4 +57,23 @@
 		from products
 		WHERE ${searchCase} LIKE '%' || #{searchVal} || '%'
 	</select>
+	
+	<select id="getProdNameSushi" parameterType="string" resultType="product">
+		SELECT product_name prodName
+		FROM products
+		WHERE product_case = '초밥류'
+		ORDER BY product_name
+	</select>
+	<select id="getProdNameSide" parameterType="string" resultType="product">
+		SELECT product_name prodName
+		FROM products
+		WHERE product_case = '사이드'
+		ORDER BY product_name
+	</select>
+	<select id="getProdNameDrink" parameterType="string" resultType="product">
+		SELECT product_name prodName
+		FROM products
+		WHERE product_case = '주류'
+		ORDER BY product_name
+	</select>
 </mapper>

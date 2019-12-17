@@ -14,4 +14,11 @@ public interface ProdDao {
 	int addProd(Product product);
 	int prodNoCnt();
 	int deleteProd(String prodNo);
+	
+	List<Product> getProdNameSushi();
+	List<Product> getProdNameSide();
+	List<Product> getProdNameDrink();
+
+	
+	
 }

@@ -56,5 +56,21 @@ public class ProdDaoImpl implements ProdDao {
 	public int prodSearchCnt(String searchCase, String searchVal) {
 		return prodMapper.prodSearchCnt(searchCase, searchVal);
 	}
+	
+	@Override
+	public List<Product> getProdNameSushi() {
+		return prodMapper.getProdNameSushi();
+	}
+
+	@Override
+	public List<Product> getProdNameSide() {
+		return prodMapper.getProdNameSide();
+	}
+
+	@Override
+	public List<Product> getProdNameDrink() {
+		return prodMapper.getProdNameDrink();
+	}
+
 
 }

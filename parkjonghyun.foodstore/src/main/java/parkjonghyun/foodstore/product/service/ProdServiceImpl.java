@@ -3,7 +3,9 @@ package parkjonghyun.foodstore.product.service;
 import java.io.File;
 import java.io.IOException;
 import java.util.ArrayList;
+import java.util.HashMap;
 import java.util.List;
+import java.util.Map;
 
 import javax.servlet.http.HttpServletRequest;
 
@@ -85,6 +87,15 @@ public class ProdServiceImpl implements ProdService{
 		return prodDao.prodSearchCnt(searchCase, searchVal);
 	}
 	
+	@Override		
+	public Map<String, List<Product>> getProdName() {
+		Map<String, List<Product>> getProName = new HashMap<String, List<Product>>();
+		getProName.put("sushiList", prodDao.getProdNameSushi());
+		getProName.put("sideList", prodDao.getProdNameSide());
+		getProName.put("drinkList", prodDao.getProdNameDrink());
+		
+		return getProName;
+	}
 	
 	public void save(String fileFullName, MultipartFile file){
 		try{

@@ -1,3 +1,4 @@
+<%@page import="parkjonghyun.foodstore.user.domain.User"%>
 <%@ page language="java" contentType="text/html; charset=UTF-8"
 	pageEncoding="UTF-8"%>
 <%@taglib prefix="c" uri="http://java.sun.com/jsp/jstl/core"%>
@@ -21,18 +22,23 @@
 <script src="https://cdn.jsdelivr.net/npm/promise-polyfill"></script>
 
 <style type="text/css">
+@font-face{
+	font-family: 'Binggrae';
+	src:url("../../resources/css/Binggrae-Bold.ttf") format('truetype');
+}
 body {
 	font-size: 1.2em;
+	font-family: Binggrae;
 }
 
 .dropdown-toggle {
 	background: #ECC45D;
 	color: black;
 	border: 2px solid;
-	width: 7em;
-	height: 2.5em;
-	font-size: 1.1em;
-	margin-right: 1em;
+	width: 7.5em;
+	height: 2.8em;
+	font-size: 1em;
+	margin-right: 1.54em;
 }
 
 .imgdiv {
@@ -83,9 +89,10 @@ body {
 }
 
 #context {
-	margin-top: 5%;
-	margin-left: 10%;
-	margin-right: 10%;
+   margin-top: 3%;
+   margin-left: 5%;
+   margin-right: 0%;
+   margin-bottom: 17%;
 }
 
 #carousel-set {
@@ -95,13 +102,19 @@ body {
 }
 
 #sidebar {
-	background-color: orange !important;
+   font-size: 19px;
+   background-color: orange !important;
+   height: 1000px;
 }
 
 .nav-link {
 	color: black;
 }
-
+.logo {
+   margin-left: -5px;
+   margin-top: 10px;
+   padding-bottom: 7px;
+}
 .childli {
 	margin-left: 1em;
 }
@@ -260,16 +273,16 @@ function updateState(id, type){
 				<div class="sidebar-sticky">
 					<ul class="nav flex-column">
 						<li class="nav-item"><a class="nav-link active"
-							href="../main"> <span data-feather="home"></span>
-								<h2 class="logo">
-									<strong>LOGO</strong>
-								</h2>
-								<hr> <span class="sr-only"></span>
-						</a></li>
+                  			href="../main"> <span data-feather="home"></span>
+                     		<h2 class="logo">
+                        		<strong>LOGO</strong>
+                     		</h2>
+                     		<hr> <span class="sr-only"></span>
+              		 </a></li>
 						<li class="nav-item"><a class="nav-link" href="check"> <span
 								data-feather="file"></span>
 								<p class="childli">주문 확인</p>
-						</a> <a class="nav-link" href="../sale/02.html"> <span
+						</a> <a class="nav-link" href="../sale/saleList"> <span
 								data-feather="file"></span>
 								<p class="childli">매출 조회</p>
 						</a> <a class="nav-link" href="../stock/modify"> <span
@@ -286,7 +299,23 @@ function updateState(id, type){
 				<div
 					class="d-flex justify-content-between flex-wrap flex-md-nowrap align-items-center pt-3 pb-2 mb-3 border-bottom">
 					<h1 class="h2">&nbsp;스시오</h1>
-					<div class="btn-toolbar mb-2 mb-md-0"></div>
+					<div class="btn-toolbar mb-2 mb-md-0">
+						<div class="dropdown">
+						<% User user = (User)session.getAttribute("user"); %>
+                    		 <button class="btn btn-warning dropdown-toggle" type="button"
+                        		id="dropdownMenu2" data-toggle="dropdown" aria-haspopup="true"
+                        		aria-expanded="false"><%=user.getUserName() %></button>
+                     	<div class="dropdown-menu" aria-labelledby="dropdownMenu2">
+                        <button class="dropdown-item" type="button">
+                           <a href="../user/check">정보 확인</a>
+                        </button>
+                        <button class="dropdown-item" type="button">
+                           <a href="../user/logout">로그아웃</a>
+                        </button>
+                     </div>
+                  </div>
+					
+					</div>
 				</div>
 
 				<div id="context">
